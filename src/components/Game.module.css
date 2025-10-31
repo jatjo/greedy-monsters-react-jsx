@@ -1,0 +1,11 @@
+.subtitle {
+    font-style: italic;
+    font-size: xxx-large;
+    color: #06AED5
+}
+
+
+.logo {
+    height: 50px;
+    cursor: pointer;
+}
