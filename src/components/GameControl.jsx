@@ -1,8 +1,9 @@
-import {useRef, useState, useEffect} from "react";
+import {useEffect, useRef, useState} from "react";
 
-import GameConfiguration from "./GameConfiguration";
+import GameConfiguration from "./config/GameConfiguration.jsx";
 import MonsterList from "./monster/MonsterList.jsx";
 import useMonsters from "../hooks/useMonster.js";
+import MonsterConfiguration from "./config/MonsterConfiguration.jsx";
 
 const GameControl = () => {
     const {monsters, gameStart, nextRound, gameOver} = useMonsters();
@@ -59,12 +60,9 @@ const GameControl = () => {
 
     return (<>
             <div>
-                <p>
-                    By default 5 monsters will play. Between each round there is a 100ms delay.
-                    These values can be changed by modifying the sliders below.
-                </p>
-
                 <GameConfiguration delayChangeHandler={handleDelayChange} defaultDelay={delayConfig.current}/>
+
+                <MonsterConfiguration/>
 
                 <p className="text-center mt-5 mb-3">
                     The buttons below control the execution of the game.
